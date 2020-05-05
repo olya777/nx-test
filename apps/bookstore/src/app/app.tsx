@@ -1,16 +1,31 @@
 import React from 'react';
-
-import styled from 'styled-components';
-
-const StyledApp = styled.div``;
+import { Link, Redirect, Route } from 'react-router-dom';
+import { BooksFeature } from '@myorg/books/feature';
+import {
+  GlobalStyles,
+  Header,
+  Main,
+  NavigationItem,
+  NavigationList
+} from '@myorg/ui';
 
 export const App = () => {
   return (
-    <StyledApp>
-      <header className="flex">
+    <>
+      <GlobalStyles />
+      <Header>
         <h1>Bookstore</h1>
-      </header>
-    </StyledApp>
+        <NavigationList>
+          <NavigationItem>
+            <Link to="/books">Books</Link>
+          </NavigationItem>
+        </NavigationList>
+      </Header>
+      <Main>
+        <Route path="/books" component={BooksFeature} />
+        <Route exact path="/" render={() => <Redirect to="/books" />} />
+      </Main>
+    </>
   );
 };
 
