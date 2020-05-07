@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '@myorg/ui';
+import { Book as BookType } from '@myorg/shared-models';
 
 export interface BookProps {
-  book: any;
-  onAdd: (book: any) => void;
+  book: BookType;
+  onAdd: (book: BookType) => void;
 }
 
 const StyledBook = styled.div`

@@ -37,6 +37,12 @@
     },
     "books-ui": {
       "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "shared-models": {
+      "tags": []
     }
   }
 }
