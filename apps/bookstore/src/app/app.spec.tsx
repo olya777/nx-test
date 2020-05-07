@@ -1,18 +1,27 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 
 import App from './app';
 
 describe('App', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<App />);
+    const { baseElement } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
 
     expect(baseElement).toBeTruthy();
   });
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
+    const { getAllByText } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
 
-    expect(getByText('Bookstore')).toBeTruthy();
+    expect(getAllByText('Books')).toBeTruthy();
   });
 });
