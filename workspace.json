@@ -165,6 +165,60 @@
           }
         }
       }
+    },
+    "books-data-access": {
+      "root": "libs/books/data-access",
+      "sourceRoot": "libs/books/data-access/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/books/data-access/tsconfig.lib.json",
+              "libs/books/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/books/data-access/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/books/data-access/jest.config.js",
+            "tsConfig": "libs/books/data-access/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "books-ui": {
+      "root": "libs/books/ui",
+      "sourceRoot": "libs/books/ui/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/books/ui/.eslintrc",
+            "tsConfig": [
+              "libs/books/ui/tsconfig.lib.json",
+              "libs/books/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/books/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/books/ui/jest.config.js",
+            "tsConfig": "libs/books/ui/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

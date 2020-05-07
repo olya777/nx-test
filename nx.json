@@ -31,6 +31,12 @@
     },
     "ui": {
       "tags": []
+    },
+    "books-data-access": {
+      "tags": []
+    },
+    "books-ui": {
+      "tags": []
     }
   }
 }

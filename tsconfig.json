@@ -17,7 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@myorg/books/feature": ["libs/books/feature/src/index.ts"],
-      "@myorg/ui": ["libs/ui/src/index.ts"]
+      "@myorg/ui": ["libs/ui/src/index.ts"],
+      "@myorg/books/data-access": ["libs/books/data-access/src/index.ts"],
+      "@myorg/books/ui": ["libs/books/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
